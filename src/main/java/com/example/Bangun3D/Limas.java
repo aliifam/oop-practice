@@ -5,7 +5,9 @@ import com.example.Bangun2D.Lingkaran;
 import com.example.Bangun2D.Persegi;
 import com.example.Bangun2D.PersegiPanjang;
 import com.example.Bangun2D.Segitiga;
-
+import com.example.Bangun2D.SegitigaSK;
+import com.example.Bangun2D.SegitigaSS;
+import com.example.Bangun2D.SegitigaSiku;
 import com.example.Matematika;
 
 public class Limas {
@@ -50,7 +52,7 @@ public class Limas {
             double d = ((PersegiPanjang) alas).getPanjang() * b / 2;
             return alas.getLuas() + (2 * c) + (2 * d); 
         } else if (alas instanceof Segitiga) {
-            return  alas.getLuas() * 3;
+            return alas.getLuas() * 3;
         } else if (alas instanceof Lingkaran) {
             double s = ((Lingkaran) alas).getR() * ((Lingkaran) alas).getR() + tinggi * tinggi;
             double sf = Math.sqrt(s);
@@ -61,17 +63,21 @@ public class Limas {
         }
     }
 
-    public String getDetailAlas(){
+    public String getDetailAlas() {
         if (alas instanceof Persegi) {
             return "Persegi";
         } else if (alas instanceof PersegiPanjang) {
-            return "Persegi Panjang";
-        } else if (alas instanceof Segitiga) {
-            return "Segitiga";
+            return "PersegiPanjang";
         } else if (alas instanceof Lingkaran) {
             return "Lingkaran";
+        } else if (alas instanceof SegitigaSiku) {
+            return "Segitiga Siku";
+        } else if (alas instanceof SegitigaSK) {
+            return "Segitiga Sama Kaki";
+        } else if (alas instanceof SegitigaSS) {
+            return "Segitiga Sama Sisi";
         } else {
-            return "undefined";
+            return "Unknown";
         }
     }
 
